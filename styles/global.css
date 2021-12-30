@@ -8,6 +8,14 @@ body {
   font-size: 18px;
 }
 
+.bg-image {
+  background-image: url(../public/images/bg.jpg);
+  height: 100vh;
+  z-index: -1;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
 * {
   box-sizing: border-box;
 }

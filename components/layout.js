@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import Image from 'next/image'
 import Link from 'next/link'
+import Navbar from './navbar'
 
-const name = 'Tim Kao'
 export const siteTitle = 'Tim Kao\'s Portfolio'
 
 export default function Layout({ children, home }) {
@@ -14,7 +13,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="My personal portfolio website"
         />
         <meta
           property="og:image"
@@ -24,41 +23,15 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <Image
+          layout="fill"
+          className="object-center object-cover pointer-events-none bg-image"
+          src={require('../public/images/bg.jpg')}
+          alt="Apple Macbook Background"
+        />
       </Head>
       <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+        <Navbar />
       </header>
       <main>{children}</main>
       {!home && (
