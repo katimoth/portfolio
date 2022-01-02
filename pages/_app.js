@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/global.css'
+// import React from "react";
 
 
 export default function App({ Component, pageProps }) {

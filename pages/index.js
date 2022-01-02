@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Header from '../components/header'
+import Image from 'next/image'
 import Link from 'next/link'
 import Date from '../components/date'
 import Layout, { siteTitle } from '../components/layout'
@@ -21,11 +23,13 @@ export default function Home({allPostsData}) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <div className='bg-image'></div>
+      <Header />
       <section className={utilStyles.headingMd}>
-        <p>Hello! I’m a software developer and student passionate about leveraging machine learning and object-oriented programming to improve human connections and solve real-world problems.</p>
+        <p>Hello! I'm a software developer and student passionate about leveraging machine learning and object-oriented programming to improve human connections and solve real-world problems.</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>Recent Work</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
@@ -40,6 +44,12 @@ export default function Home({allPostsData}) {
           ))}
         </ul>
       </section>
+      {/* <Image
+        layout="fill"
+        className="object-center object-cover pointer-events-none bg-image"
+        src={require('../public/images/bg.jpg')}
+        alt="Apple Macbook Background"
+      /> */}
     </Layout>
   )
 }

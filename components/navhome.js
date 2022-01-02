@@ -26,15 +26,15 @@ export default function NavHome({home}) {
                 priority
                 src="/images/profile.jpg"
                 className={utilStyles.borderCircle}
-                height={108}
-                width={108}
+                height={90}
+                width={90}
                 alt="Tim Kao"
               />
             </a>
           </Link>
           <h2 className={utilStyles.logoText} >
             <Link href="/" >
-              <a className={utilStyles.colorInherit + "navbar-brand text-dark"}>Tim Kao</a>
+              <a className={utilStyles.colorInherit + "text-dark"}>Tim Kao</a>
             </Link>
           </h2>
         </>
